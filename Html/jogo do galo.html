@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <meta charset="utf-8"/>
+        <title> Jogo do Galo </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <html href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <div class="JogoDoGalo">
+            Jogo Do Galo
+        </div>
+        <div 
+            id="msgUser";
+            style="line-height:2;
+            text-align:center;
+            font-size:30px;
+            display:none;">
+        </div>
+
+
+        <div class="caixaMae">
+                <div class="caixa n1">1</div>
+                <div class="caixa n2">2</div>
+                <div class="caixa n3">3</div>
+                <div class="caixa n4">4</div>
+                <div class="caixa n5">5</div>
+                <div class="caixa n6">6</div>
+                <div class="caixa n7">7</div>
+                <div class="caixa n8">8</div>
+                <div class="caixa n9">9</div>
+        </div>
+        
+        
+        <img src="images/galo.png"; style: width= 400px; position:center/>
+        
+         
+    </body>
+    <script>
+        var posX = "X";
+        var posO = "O";
+        var jogador =1;
+        var jogoterminou = false;
+
+        function jogar(painel) {
+            var myVal = painel.html();
+            //alert("cliquei no n1 : " + myVal);
+            if (myVal != posX && myVal != posO) {
+                if ( jogador == 1) {
+                painel.html(posX);
+                jogador = 2;
+            } else if (jogador == 2) {
+                painel.html(posO);
+                jogador = 1;
+            } 
+            // verificar se ganhou após jogar !!!
+              verificaFinalJogo();
+            } else {
+            alert("Posição já escolhida !!!!");
+            }
+            return true;
+        }
+
+        $(".caixa").on("click", function() {
+                if (!jogoterminou) {
+                jogar($(this));
+
+                }
+        })
+
+            //alertas no inicio do jogo
+            alert("Olá ,seja Bem Vindo ao jogo do Galo")
+            alert("O jogador 1 é o X e o jogador 2 é a O")
+            alert("Bom Jogo")
+
+        function verificaFinalJogo() {
+            var nx1 = $(".n1").html();
+            var nx2 = $(".n2").html();
+            var nx3 = $(".n3").html();
+            var nx4 = $(".n4").html();
+            var nx5 = $(".n5").html();
+            var nx6 = $(".n6").html();
+            var nx7 = $(".n7").html();
+            var nx8 = $(".n8").html();
+            var nx9 = $(".n9").html();
+
+        //alguem ganhou
+        if ((nx1 == nx2) && (nx2 == nx3)) {
+            alguemganhou();
+        } else if ((nx4 == nx5) && (nx5 == nx6)){
+            alguemganhou();
+        } else if ((nx7 == nx8) && (nx8 == nx9)){
+            alguemganhou();
+        } else if ((nx1 == nx4) && (nx4 == nx7)){
+            alguemganhou();
+        } else if ((nx2 == nx5) && (nx5 == nx8)){
+            alguemganhou();
+        } else if ((nx3 == nx6) && (nx6 == nx9)){
+            alguemganhou();
+        } else if ((nx1 == nx5) && (nx5 == nx9)){
+            alguemganhou();
+        } else if ((nx3 == nx5) && (nx5 == nx7)){
+            alguemganhou();
+        } else 
+
+        //jogo terminou !
+        var vazio = false;
+        for (i=1; i<=9; i++) {
+            if ($(".n" + i).html() == i) {
+                vazio = true;
+            }
+        }
+        function alguemganhou() {
+            $("#msgUser").html("Vitoria<br><a href='?new'>Jogar de novo</a>");
+            $("#msgUser").fadeIn("slow");
+            jogoterminou = true;    
+        }
+        if (!vazio) {
+            $("#msgUser").html("Empate -_-<br><a href='?new'>Jogar de novo</a>");
+            $("#msgUser").fadeIn("slow");
+            jogoterminou = true;  
+        }
+    }
+    </script>
+</html>

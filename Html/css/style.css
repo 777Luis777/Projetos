@@ -1,0 +1,78 @@
+*{font-family: 'Montserrat', sans-serif;}
+
+    h2{ color :#ff0000;}  
+/*comentário em style*/         
+.xpto {
+    width: 300px;
+    height: 300px;
+    /*url("../images/Bot_off.png") no-repeat center center;*/    
+    background:#f00;
+    cursor: pointer;
+
+    /*display: none;*/
+} 
+
+.xpto:hover {
+    background: #0f0
+    /*url("../images/Bot_on.png") no-repeat center center;*/ 
+    
+}   
+
+.xpto.n2 {
+ background-color: #00f;
+}
+
+.xpto.n2:hover {
+    transition: #eee ;
+}
+
+#obj1{width: 100px;height: 50px;}
+#obj2{width: 200px;height: 20px;}
+#obj3{width: 500px;height: 200px;}
+#obj1, #obj2, #obj3 { border: 1px solid #999;float: right;} 
+
+.areaUTIL{ width: 1000px;margin: 10px; 10px auto;}
+.zonaLogo{ width: 200px;margin: 0 auto;}
+.zonaMenu{ width: 100%;border: 1px solid #f00;}
+.menuOps{ width: 33%;float: left; text-align: center;}
+
+
+/*estilos jogo do galo*/
+
+.caixaMae { 
+    position:relative; 
+    margin: 0 auto;
+    width: 606px; 
+    background-color:#DAA520;
+}
+.caixa { 
+    width: 200px;
+    height:200px;
+    float:left;
+    border:1px solid #DAA520;
+    /*posiciona o texto nas caixas*/
+    text-align: center;
+    line-height: 2;
+    font-size: 100px;   
+    cursor: pointer;
+    background-color:#ffffe7;
+}
+
+.caixa.n1 {color:#FFA500;}
+.caixa.n2 {color:#FFA500;}
+.caixa.n3 {color:#FFA500;}
+.caixa.n3 {color:#FFA500;}
+.caixa.n4 {color:#FFA500;}
+.caixa.n5 {color:#FFA500;}
+.caixa.n6 {color:#FFA500;}
+.caixa.n7 {color:#FFA500;}
+.caixa.n8 {color:#FFA500;}
+.caixa.n9 {color:#FFA500;}
+
+/*titulo*/
+.JogoDoGalo{
+    text-align: center;
+    font-size: 65px;
+    height: 125px;
+    color: #FF4500
+}
