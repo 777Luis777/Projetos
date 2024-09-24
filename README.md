@@ -1,2 +1,2 @@
 # Projetos
-Neste repusitorio contem todos os projetos feitos.
+Neste repositorio contem todos os projetos feitos por mim.
